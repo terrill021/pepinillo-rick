@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 class IsItFriday {
     static String isItFriday(String today) {
-        return "Nope";
+        return today.equals("Friday") ? "TGIF" : "Nope";
     }
 }
 
@@ -20,6 +20,11 @@ public class StepDefinitions {
     @Given("today is Sunday")
     public void today_is_Sunday() {
         today = "Sunday";
+    }
+
+    @Given("today is Friday")
+    public void today_is_Friday() {
+        today = "Friday";
     }
 
     @When("I ask whether it's Friday yet")
